@@ -105,7 +105,12 @@ if !exists("g:PyUnitTestsSplitWindow")
     " window.  Takes one of the following values: top, bottom, left, right
     let PyUnitTestsSplitWindow = "right"
 endif
+if !exists("g:PyUnitOpenTestFileOnFailure")
+    " Configuration for whether or not to open test file on failures
+    let PyUnitOpenTestFileOnFailure = 1
+endif
 " }}}
+"
 
 python << endpython
 import vim
@@ -525,7 +530,9 @@ fun! PyUnitRunNose(path) " {{{
     let has_errors=getqflist() != []
     if has_errors
         " first, open the alternate window, too
-        call PyUnitSwitchToCounterpart()
+        if g:PyUnitOpenTestFileOnFailure == 1
+            call PyUnitSwitchToCounterpart()
+        endif
         execute 'belowright copen'
         setlocal wrap
         nnoremap <buffer> <silent> c :cclose<CR>
