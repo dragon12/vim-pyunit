@@ -147,7 +147,7 @@ The plugin supports setting of the following variables:
 | ``PyUnitConfirmTestCreation``   | Ask to confirm creation of new test files.     | 0 or 1                    | 1                                 |
 +---------------------------------+------------------------------------------------+---------------------------+-----------------------------------+
 | ``PyUnitOpenTestFileOnFailure`` | Ask to confirm creation of new test files on   | 0 or 1                    | 1                                 |
-|                                 |  test failure.                                 |                           |                                   |
+|                                 | test failure.                                  |                           |                                   |
 +---------------------------------+------------------------------------------------+---------------------------+-----------------------------------+
 
 
